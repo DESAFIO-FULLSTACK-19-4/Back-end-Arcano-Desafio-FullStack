@@ -1,14 +1,9 @@
-import express from 'express'
+import express from "express";
+import routes from "./routes";
+import cors from 'cors';
 
-// importando as rotas que acabamos de definir
-import routes from './routes';
-
-const app = express()
-
-app.use(express.json())
-
-// registrando as rotas na aplicação
-app.use(routes)
-
-app.listen(3000)
-        
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use(routes);
+app.listen(3003);
